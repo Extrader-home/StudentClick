@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"navigationBarTitleText": "积分详情",
+	"usingComponents": {
+	  "van-cell": "../../../dist/cell/index",
+		"van-cell-group": "../../../dist/cell-group/index"
+	}
+}

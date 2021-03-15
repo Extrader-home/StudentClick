@@ -1,0 +1,41 @@
+<van-dialog id="van-dialog" confirm-button-open-type="openSetting"/>
+<van-notice-bar
+	text="登录成功即可使用所有功能"
+	speed="50"
+	left-icon="volume-o"
+/>
+<view class="demo-home">
+	<view class="demo-home__title">
+		<image mode="aspectFit" class="demo-home__image" src="../../img/icon.png" />
+		<view class="demo-home__text">学生考勤系统</view>
+	</view>
+	<view class="demo-home__desc">
+		测试阶段
+	</view>
+	<form bindsubmit="login">
+		<!--学号/工号-->
+		<van-cell-group>
+			<van-field
+				name="id"
+				label="学号/工号"
+				placeholder="请输入学号或职工号"
+				border="{{ false }}"
+			/>
+		</van-cell-group>
+		<!--密码-->
+		<van-cell-group>
+			<van-field
+				name="password"
+				type="password"
+				label="密码"
+				placeholder="请输入密码"
+				border="{{ false }}"
+			/>
+		</van-cell-group>
+		<!--按钮-->
+		<van-button round form-type="submit" open-type="login" color="linear-gradient(to right, #4bb0ff, #6149f6)" bindgetuserinfo="login" type="primary" block>登录</van-button>
+		<view class="reg-btn">
+  		<navigator url="../register/index">还未注册？点击注册</navigator>
+		</view>
+	</form>
+</view> 

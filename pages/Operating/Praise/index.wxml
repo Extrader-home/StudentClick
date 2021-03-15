@@ -1,0 +1,22 @@
+<van-dialog id="van-dialog" />
+<van-cell
+  title="集体表扬"
+  value="+3分"
+  bind:click="send_all_praise"
+/>
+<van-panel title="个人表扬" status="+5分" use-footer-slot>
+  <van-cell-group>
+    <van-field
+      center
+      clearable
+      label="学号"
+      placeholder="请输入表扬学生学号"
+      use-button-slot
+      bind:change="id_change"
+    >
+      <van-button slot="button" size="small" type="primary" bind:click="send_praise">
+        提交
+      </van-button>
+    </van-field>
+  </van-cell-group>
+</van-panel>

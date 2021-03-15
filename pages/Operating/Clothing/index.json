@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"navigationBarTitleText": "上交服装",
+	"usingComponents": {
+		"van-circle": "../../../dist/circle/index",
+		"van-divider": "../../../dist/divider/index"
+	}
+}

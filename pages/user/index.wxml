@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" data-url="/pages/login/index" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="demo-home">
+    <view class="demo-home-nav">
+      <view class="demo-home-nav__group">
+        <view
+          class="demo-home-nav__block"
+          data-url="/pages/login/index" 
+          bind:tap="bindViewTap"
+        >
+          重新登录
+          <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+        </view>
+        <view
+          class="demo-home-nav__block"
+          data-url="/pages/user/userinfo/index" 
+          bind:tap="bindViewTap"
+        >
+          个人信息
+          <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

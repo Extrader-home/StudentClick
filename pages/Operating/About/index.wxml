@@ -1,0 +1,40 @@
+<van-cell
+  title="迟到"
+  value="-2分/次"
+/>
+<van-cell
+  title="无故缺席"
+  value="-10分/次"
+/>
+<van-cell
+  title="请假超过3次"
+  value="-5分/次"
+/>
+<van-cell
+  title="集体表扬"
+  value="+3分/次"
+/>
+<van-cell
+  title="个人表扬"
+  value="+5分/次"
+/>
+<van-cell
+  title="未按时上交服装"
+  value="-3分/次"
+/>
+<van-cell
+  title="按时上交服装"
+  value="+3分/次"
+/>
+<van-cell
+  title="回课 A等"
+  value="+5分/次"
+/>
+<van-cell
+  title="回课 B等"
+  value="+3分/次"
+/>
+<van-cell
+  title="无回课"
+  value="-5分/次"
+/>

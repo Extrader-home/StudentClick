@@ -1,0 +1,42 @@
+<!-- <van-button type="primary" bind:click="toggleActionSheet" data-name="测试1">弹出菜单</van-button>
+<van-button type="primary" bind:click="toggleActionSheet" data-name="测试2">弹出菜单</van-button> -->
+<view wx:for="{{ student_list_length }}" wx:for-index="index" wx:key="*this">
+    <van-cell
+        title="{{ student_list[index].username }} {{ student_list[index].studentid }}"
+        value="{{ student_list[index].status }}"
+        icon="user-circle-o"
+        border="false"
+        bind:click="toggleActionSheet"
+        data-id="{{ student_list[index].studentid }}"
+    />
+</view>
+<van-action-sheet
+    show="{{ show }}"
+    actions="{{ action }}"
+    bind:close="toggleActionSheet"
+    bind:select="onClick"
+/>
+
+<van-dialog id="van-dialog" />
+
+<van-dialog
+    use-slot
+    title="请假缘由"
+    width="320px"
+    show="{{ leave_pop_up }}"
+    show-cancel-button
+    bind:confirm="leave_confirm"
+    bind:cancel="leave_cancel"
+>
+<van-cell-group>
+    <van-field
+        value="{{ leave_reason }}"
+        placeholder="请输入请假缘由"
+        type="text"
+        border="false"
+        autosize
+        bind:change="leave_reason_change"
+    />   
+</van-cell-group>
+    <!-- <input type = 'text' placeholder = "请输入请假缘由" auto-focus />  -->
+</van-dialog>

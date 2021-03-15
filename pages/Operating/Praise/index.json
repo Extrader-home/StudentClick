@@ -1,0 +1,9 @@
+{
+	"component": true,
+	"navigationBarTitleText": "表扬操作",
+	"usingComponents": {
+		"van-circle": "../../../dist/circle/index",
+		"van-divider": "../../../dist/divider/index",
+		"van-panel": "../../../dist/panel/index"
+	}
+}

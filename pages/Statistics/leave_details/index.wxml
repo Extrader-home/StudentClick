@@ -1,0 +1,21 @@
+<van-dialog id="van-dialog" />
+<view wx:for="{{ leave_detail_list_length }}" wx:for-index="index" wx:key="*this">
+  <van-panel 
+    title="{{ leave_detail_list[index].username }}" 
+    desc="{{ leave_detail_list[index].time }}" 
+    status="{{ leave_detail_list[index].studentid }}" 
+    use-footer-slot
+  >
+    <view class="content">请假理由：{{ leave_detail_list[index].reason }}</view>
+    <view wx:if="{{now_authority != 'student'}}">
+      <view slot="footer" class="footer">
+        <van-button size="small" type="danger" bind:click="delete_click"
+          data-id="{{ leave_detail_list[index].studentid }}"
+          data-time="{{ leave_detail_list[index].time }}"
+        >
+        删除
+        </van-button>
+      </view>
+    </view>
+  </van-panel>
+</view>

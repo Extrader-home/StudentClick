@@ -1,0 +1,119 @@
+<van-dialog id="van-dialog" />
+<view class="demo-home">
+	<view class="demo-home__title">
+		<image mode="aspectFit" class="demo-home__image" src="../../img/icon.png" />
+		<view class="demo-home__text">学生考勤系统</view>
+	</view>
+	<view class="demo-home__desc">
+		<view wx:if="{{token == 'teacher'}}">
+			当前身份：老师
+		</view>
+		<view wx:elif="{{token == 'student'}}">
+			当前身份：学生
+		</view>
+		<view wx:elif="{{token == 's_student'}}">
+			当前身份：助教
+		</view>
+		<view wx:elif="{{token == 0}}">
+			当前身份：未登录
+		</view>
+		<view wx:elif="{{token == 2}}">
+			当前身份：登录中...
+		</view>
+	</view>
+	<view wx:if="{{token == 'teacher'}}">
+		<view
+		wx:for="{{ list }}"
+		wx:for-item="group"
+		wx:key="index"
+		>
+			<view class="demo-home-nav">
+					<view class="demo-home-nav__title">{{ group.groupName }}</view>
+				<view class="demo-home-nav__group">
+					<view
+					wx:for="{{ group.teacher_list }}"
+					wx:key="title"
+					class="demo-home-nav__block"
+					data-url="/pages{{ item.path }}/index"
+					bind:tap="onClick"
+					data-features="{{ item.value }}"
+					>
+						{{ item.title }}
+						<van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="reg-btn">
+  			<navigator url="/pages/login/index">登录成功！点击可重新登陆</navigator>
+			</view> -->
+			<!-- <van-button round type="info" type="primary" bind:click="gotologin" block>登录成功！点击可重新登陆</van-button> -->
+		</view>
+	</view>
+	<view wx:elif="{{token == 'student'}}">
+		<view
+		wx:for="{{ list }}"
+		wx:for-item="group"
+		wx:key="index"
+		>
+			<view class="demo-home-nav">
+					<view class="demo-home-nav__title">{{ group.groupName }}</view>
+				<view class="demo-home-nav__group">
+					<view
+					wx:for="{{ group.student_list }}"
+					wx:key="title"
+					class="demo-home-nav__block"
+					data-url="/pages{{ item.path }}/index"
+					bind:tap="onClick"
+					data-features="{{ item.value }}"
+					>
+						{{ item.title }}
+						<van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="reg-btn">
+  			<navigator url="/pages/login/index">登录成功！点击可重新登陆</navigator>
+			</view> -->
+			<!-- <van-button round type="info" type="primary" bind:click="gotologin" block>登录成功！点击可重新登陆</van-button> -->
+		</view>
+	</view>
+	<view wx:elif="{{token == 's_student'}}">
+		<view
+		wx:for="{{ list }}"
+		wx:for-item="group"
+		wx:key="index"
+		>
+			<view class="demo-home-nav">
+					<view class="demo-home-nav__title">{{ group.groupName }}</view>
+				<view class="demo-home-nav__group">
+					<view
+					wx:for="{{ group.s_student_list }}"
+					wx:key="title"
+					class="demo-home-nav__block"
+					data-url="/pages{{ item.path }}/index"
+					bind:tap="onClick"
+					data-features="{{ item.value }}"
+					>
+						{{ item.title }}
+						<van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="reg-btn">
+  			<navigator url="/pages/login/index">登录成功！点击可重新登陆</navigator>
+			</view> -->
+			<!-- <van-button round type="info" type="primary" bind:click="gotologin" block>登录成功！点击可重新登陆</van-button> -->
+		</view>
+	</view>
+	<view wx:elif="{{token == 0}}">
+		<van-button round type="info" type="primary" bind:click="gotologin" block>登录失败,当前未登录,点击登录后使用</van-button>
+	</view>
+	<view wx:elif="{{token == 2}}">
+		<view class="loading">
+			<van-loading type="spinner" color="#1989fa" >
+				登录中...
+			</van-loading>
+		</view>
+		<!-- <van-button round loading type="info" loading-text="登录中..." type="primary" block/> -->
+	</view>
+</view>

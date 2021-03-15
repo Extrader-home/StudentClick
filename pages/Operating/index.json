@@ -1,0 +1,9 @@
+{
+	"component": true,
+	"navigationBarTitleText": "积分操作",
+	"usingComponents": {
+		"van-circle": "../../dist/circle/index",
+		"van-dialog": "../../dist/dialog/index",
+		"van-divider": "../../dist/divider/index"
+	}
+}

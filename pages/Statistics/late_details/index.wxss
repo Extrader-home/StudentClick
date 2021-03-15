@@ -1,0 +1,20 @@
+.content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.footer {
+  text-align: right;
+}
+
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 60px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}

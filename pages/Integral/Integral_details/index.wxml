@@ -1,0 +1,6 @@
+<view wx:for="{{ integral_list_length }}" wx:for-index="index" wx:key="*this">
+    <van-cell
+        title="{{ integral_list[index] }}"
+        border="false"
+    />
+</view>

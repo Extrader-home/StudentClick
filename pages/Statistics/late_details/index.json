@@ -1,0 +1,10 @@
+{
+	"component": true,
+	"navigationBarTitleText": "迟到详情",
+	"usingComponents": {
+		"van-notice-bar": "../../../dist/notice-bar/index",
+		"van-dialog": "../../../dist/dialog/index",
+		"van-panel": "../../../dist/panel/index",
+		"van-swipe-cell": "../../../dist/swipe-cell/index"
+	}
+}

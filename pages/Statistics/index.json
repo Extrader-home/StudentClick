@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"navigationBarTitleText": "详情统计",
+	"usingComponents": {
+		"van-circle": "../../dist/circle/index",
+		"van-divider": "../../dist/divider/index"
+	}
+}

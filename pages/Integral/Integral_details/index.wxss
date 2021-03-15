@@ -1,0 +1,16 @@
+.van-circle {
+  margin: 5px 2% 10px;
+}
+
+.link {
+  display: flex; flex-direction: row;
+  flex-wrap: wrap; width: 654rpx;
+  margin: 0 auto; position: relative;
+  left: 5rpx; 
+ } 
+ .link_child {
+  width: 31%;
+ } 
+ .link_child:not(:nth-child(3n)){
+  margin-right: 10rpx; 
+ }

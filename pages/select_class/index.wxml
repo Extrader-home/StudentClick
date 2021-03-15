@@ -1,0 +1,37 @@
+<!-- <view class="demo-home-nav">
+  <view class="demo-home-nav__group">
+    <view wx:for="{{ class_list_length }}" wx:for-index="index" wx:key="*this">
+      <van-cell
+        title="{{ class_list[index].class }}"
+        is-link
+        custom-class="demo-home-nav__block"
+        url="/pages/{{ features }}/index" 
+        link-type="redirectTo"
+        data-class="{{ class_list[index].class }}"
+        bind:click="set_class"
+      />
+    </view>
+  </view>
+</view> -->
+
+<van-dialog id="van-dialog" />
+<view class="demo-home">
+    <view class="demo-home-nav">
+      <view class="demo-home-nav__title">班级选择</view>
+      <view class="demo-home-nav__group">
+        <view
+          wx:for="{{ class_list_length }}"
+          wx:for-index="index" 
+          wx:key="*this"
+          class="demo-home-nav__block"
+          data-url="/pages/{{ features }}/index" 
+          bind:tap="set_class"
+          data-class="{{ class_list[index].class_name }}"
+        >
+          {{ class_list[index].class_name }}
+          <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+        </view>
+      </view>
+    </view>
+</view>
+

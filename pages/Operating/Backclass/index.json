@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"navigationBarTitleText": "回课操作",
+	"usingComponents": {
+		"van-circle": "../../../dist/circle/index",
+		"van-divider": "../../../dist/divider/index"
+	}
+}

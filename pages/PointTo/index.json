@@ -1,0 +1,15 @@
+{
+  "component": true,
+	"navigationBarTitleText": "点到",
+	"usingComponents": {
+	  "van-checkbox": "../../dist/checkbox/index",
+		"van-checkbox-group": "../../dist/checkbox-group/index",
+		"van-button": "../../dist/button/index",
+		"van-swipe-cell": "../../dist/swipe-cell/index",
+		"van-action-sheet": "../../dist/action-sheet/index",
+	  "van-cell": "../../dist/cell/index",
+		"van-cell-group": "../../dist/cell-group/index",
+		"van-icon": "../../dist/icon/index",
+		"van-dialog": "../../dist/dialog/index"
+	}
+}

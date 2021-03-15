@@ -1,0 +1,122 @@
+<van-dialog id="van-dialog" />
+<view wx:if="{{token == 'teacher'}}">
+  <van-cell
+    title="用户ID"
+    value="{{ user_list[0].teacherid }}"
+  />
+  <van-cell
+    title="用户名"
+    value="{{ user_list[0].username }}"
+    bind:click="modify_username"
+    is-link
+  />
+  <van-cell
+    title="修改密码"
+    bind:click="modify_pass"
+    is-link
+  />
+</view>
+<view wx:elif="{{token == 'student'}}">
+  <van-cell
+    title="用户ID"
+    value="{{ user_list[0].teacherid }}"
+  />
+  <van-cell
+    title="用户名"
+    value="{{ user_list[0].username }}"
+    bind:click="modify_username"
+    is-link
+  />
+  <van-cell
+    title="所在班级"
+    value="{{ user_list[0].class_name }}"
+    bind:click="modify_class"
+    is-link
+  />
+  <van-cell
+    title="修改密码"
+    bind:click="modify_pass"
+    is-link
+  />
+</view>
+<view wx:elif="{{token == 's_student'}}">
+  <van-cell
+    title="用户ID"
+    value="{{ user_list[0].teacherid }}"
+  />
+  <van-cell
+    title="用户名"
+    value="{{ user_list[0].username }}"
+    bind:click="modify_username"
+    is-link
+  />
+  <van-cell
+    title="所在班级"
+    value="{{ user_list[0].class_name }}"
+    bind:click="modify_class"
+    is-link
+  />
+  <van-cell
+    title="修改密码"
+    bind:click="modify_pass"
+    is-link
+  />
+</view>
+
+<van-dialog
+    use-slot
+    title="个人信息修改"
+    width="320px"
+    show="{{ show_txt }}"
+    show-cancel-button
+    bind:confirm="txt_confirm"
+    bind:cancel="txt_cancel"
+>
+  <van-cell-group>
+    <van-field
+        value="{{ txt }}"
+        label="内容"
+        placeholder="请输入要修改的内容"
+        type="text"
+        autosize
+        bind:change="txt_change"
+    />
+  </van-cell-group>
+</van-dialog>
+
+<van-dialog
+    use-slot
+    title="密码修改"
+    width="320px"
+    show="{{ show_pass }}"
+    show-cancel-button
+    bind:confirm="pass_confirm"
+    bind:cancel="pass_cancel"
+>
+  <van-cell-group>
+    <van-field
+        value="{{ old_pass }}"
+        label="原密码"
+        placeholder="请输入原密码"
+        type="text"
+        autosize
+        bind:change="old_pass_change"
+    />
+    <van-field
+        value="{{ new_pass }}"
+        label="新密码"
+        placeholder="请输入新密码"
+        type="password"
+        autosize
+        bind:change="new_pass_change"
+    />
+    <van-field
+        value="{{ confirm_new_pass }}"
+        label="确认新密码"
+        placeholder="请确认新密码"
+        type="password"
+        autosize
+        bind:change="confirm_new_pass_change"
+    />
+  </van-cell-group>
+</van-dialog>

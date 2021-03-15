@@ -1,0 +1,15 @@
+<van-notice-bar
+	text="初始积分为100，点击查看积分详情"
+	speed="50"
+	left-icon="volume-o"
+/>
+<view wx:for="{{ integral_list_length }}" wx:for-index="index" wx:key="*this">
+    <van-cell
+        title="{{ integral_list[index].username }} {{ integral_list[index].studentid }}"
+        value="{{ integral_list[index].integral }}"
+        icon="user-circle-o"
+        border="false"
+        bind:click="goto_details"
+        data-id="{{ integral_list[index].studentid }}"
+    />
+</view>

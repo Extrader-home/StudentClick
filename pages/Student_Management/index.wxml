@@ -1,0 +1,30 @@
+<view wx:for="{{ student_list_length }}" wx:for-index="index" wx:key="*this">
+  <view wx:if="{{ student_list[index].authority == 1 }}">
+      <van-cell
+        title="{{ student_list[index].username }} {{ student_list[index].studentid }}"
+        value="助教"
+        icon="user-circle-o"
+        border="false"
+        bind:click="toggleActionSheet"
+        data-id="{{ student_list[index].studentid }}"
+      />
+  </view>
+  <view wx:else>
+    <van-cell
+        title="{{ student_list[index].username }} {{ student_list[index].studentid }}"
+        value=" "
+        icon="user-circle-o"
+        border="false"
+        bind:click="toggleActionSheet"
+        data-id="{{ student_list[index].studentid }}"
+      />
+  </view>
+</view>
+<van-action-sheet
+    show="{{ show }}"
+    actions="{{ action }}"
+    bind:close="toggleActionSheet"
+    bind:select="onClick"
+/>
+
+<van-dialog id="van-dialog" />

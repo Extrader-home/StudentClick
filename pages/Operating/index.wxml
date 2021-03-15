@@ -1,0 +1,143 @@
+<van-dialog id="van-dialog" />
+<view class="demo-home">
+  <view class="demo-home-nav">
+    <view class="demo-home-nav__title">固定积分操作</view>
+    <view class="demo-home-nav__group">
+      <view
+        class="demo-home-nav__block"
+        data-url="/pages/Operating/Praise/index" 
+        bind:tap="goto_mode"
+      >
+      表扬
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+
+      <view
+        class="demo-home-nav__block"
+        data-url="/pages/Operating/Clothing/index" 
+        bind:tap="goto_mode"
+      >
+      上交服装
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+
+      <view
+        class="demo-home-nav__block"
+        data-url="/pages/Operating/Backclass/index" 
+        bind:tap="goto_mode"
+      >
+      回课
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="demo-home-nav">
+    <view class="demo-home-nav__title">自主积分操作</view>
+    <view class="demo-home-nav__group">
+      <view
+        class="demo-home-nav__block"
+        bind:tap="add_points"
+      >
+      加分
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+
+      <view
+        class="demo-home-nav__block"
+        bind:tap="minus_points"
+      >
+      减分
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="demo-home-nav">
+    <view class="demo-home-nav__title">关于积分操作</view>
+    <view class="demo-home-nav__group">
+      <view
+        class="demo-home-nav__block"
+        data-url="/pages/Operating/About/index" 
+        bind:tap="goto_mode"
+      >
+      关于积分操作
+        <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+      </view>
+    </view>
+  </view>
+</view>
+
+<van-dialog
+    use-slot
+    title="加分操作"
+    width="320px"
+    show="{{ show_add_points }}"
+    show-cancel-button
+    bind:confirm="add_points_confirm"
+    bind:cancel="add_points_cancel"
+>
+  <van-cell-group>
+    <van-field
+        value="{{ student_id }}"
+        label="学号"
+        placeholder="请输入学号"
+        type="text"
+        autosize
+        bind:change="id_change"
+    />  
+    <van-field
+        value="{{ points }}"
+        label="积分"
+        placeholder="请输入积分(1~100)"
+        type="number"
+        autosize
+        bind:change="points_change"
+    />   
+    <van-field
+        value="{{ reason }}"
+        label="缘由"
+        placeholder="请输入缘由"
+        type="text"
+        autosize
+        bind:change="reason_change"
+    />   
+  </van-cell-group>
+</van-dialog>
+
+<van-dialog
+    use-slot
+    title="减分操作"
+    width="320px"
+    show="{{ show_minus_points }}"
+    show-cancel-button
+    bind:confirm="minus_points_confirm"
+    bind:cancel="minus_points_cancel"
+>
+  <van-cell-group>
+    <van-field
+        value="{{ student_id }}"
+        label="学号"
+        placeholder="请输入学号"
+        type="text"
+        autosize
+        bind:change="id_change"
+    />  
+    <van-field
+        value="{{ points }}"
+        label="积分"
+        placeholder="请输入积分(1~100)"
+        type="number"
+        autosize
+        bind:change="points_change"
+    />   
+    <van-field
+        value="{{ reason }}"
+        label="缘由"
+        placeholder="请输入缘由"
+        type="text"
+        autosize
+        bind:change="reason_change"
+    />   
+  </van-cell-group>
+</van-dialog>

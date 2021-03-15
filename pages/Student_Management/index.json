@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"navigationBarTitleText": "学生管理",
+	"usingComponents": {
+		"van-circle": "../../dist/circle/index",
+		"van-divider": "../../dist/divider/index"
+	}
+}

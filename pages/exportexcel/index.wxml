@@ -1,0 +1,35 @@
+<van-dialog id="van-dialog" />
+<view class="demo-home">
+    <view class="demo-home-nav">
+      <view class="demo-home-nav__title">数据导出</view>
+      <view class="demo-home-nav__group">
+        <view
+          class="demo-home-nav__block"
+          bind:tap="export_integral"
+        >
+          学生积分数据导出
+          <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+        </view>
+        <view
+          class="demo-home-nav__block"
+          bind:tap="export_Attendance"
+        >
+          学生考勤数据导出
+          <van-icon name="arrow" custom-class="demo-home-nav__icon"/>
+        </view>
+      </view>
+    </view>
+</view>
+
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput"
+    bind:confirm="time_confirm"
+    bind:cancel="time_cancel"
+    formatter="{{ formatter }}"
+  />
+</van-overlay>
+
+

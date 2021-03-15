@@ -1,0 +1,62 @@
+<van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 15px;"
+>
+  迟到统计
+</van-divider>
+<!--3个一排，超过换行-->
+<view class="link">
+  <view class="link_child" bindtap="goto_day"> 
+    <van-circle value="100" stroke-width="6" layer-color="#eee" color="#07c160" text="本日：{{ d_w_m[0].day }}人" /> 
+  </view>
+  <view class="link_child" bindtap="goto_week">
+    <van-circle value="100" stroke-width="6" layer-color="#eee" color="#1989FA" text="本周：{{ d_w_m[1].week }}人" />
+  </view>
+  <view class="link_child" bindtap="goto_month">
+    <van-circle value="100" stroke-width="6" layer-color="#eee" color="#ee0a24" text="本月：{{ d_w_m[2].month }}人" />
+  </view>
+</view>
+
+<van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 15px;"
+>
+  缺勤统计
+</van-divider>
+
+<view wx:for="{{ absent_student_list_length }}" wx:for-index="index" wx:key="*this">
+  <van-cell
+    title="{{ absent_student_list[index].username }} {{ absent_student_list[index].studentid }}"
+    value="{{ absent_student_list[index].count }}次"
+    icon="user-circle-o"
+    border="false"
+    bind:click="absent_click"
+    data-url="./absent_details/index" 
+    data-id="{{ absent_student_list[index].studentid }}"
+  />
+</view>
+<view class="zero_length" wx:if="{{ absent_student_list_length == 0 }}">
+  无人缺勤
+</view>
+
+<van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 15px;"
+>
+  请假统计
+</van-divider>
+
+<view wx:for="{{ leave_student_list_length }}" wx:for-index="index" wx:key="*this">
+  <van-cell
+    title="{{ leave_student_list[index].username }} {{ leave_student_list[index].studentid }}"
+    value="{{ leave_student_list[index].count }}次"
+    icon="user-circle-o"
+    border="false"
+    bind:click="leave_click"
+    data-url="./leave_details/index"
+    data-id="{{ leave_student_list[index].studentid }}"
+  />
+</view>
+<view class="zero_length" wx:if="{{ leave_student_list_length == 0 }}">
+  无人请假
+</view>

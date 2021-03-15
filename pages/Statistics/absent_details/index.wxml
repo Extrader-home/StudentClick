@@ -1,0 +1,25 @@
+<van-dialog id="van-dialog" />
+<van-notice-bar
+	text="左滑可删除记录"
+	speed="50"
+	left-icon="volume-o"
+/>
+<view wx:for="{{ absent_detail_list_length }}" wx:for-index="index" wx:key="*this">
+  <van-swipe-cell 
+    right-width="60" 
+    async-close 
+    bind:close="delete_click"
+    data-id="{{ absent_detail_list[index].studentid }}"
+    data-time="{{ absent_detail_list[index].time }}"
+  >
+    <van-cell-group>
+      <van-panel 
+        title="{{ absent_detail_list[index].username }}" 
+        desc="{{ absent_detail_list[index].time }}" 
+        status="{{ absent_detail_list[index].studentid }}" 
+      />
+    </van-cell-group>
+    <view slot="right">删除</view>
+  </van-swipe-cell>
+</view>
+
